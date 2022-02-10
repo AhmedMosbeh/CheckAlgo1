@@ -1,0 +1,59 @@
+algorithm
+ function vol(string ch; ):integer
+ var 
+ integer i,v;
+ begin
+ for i from 1 to len(ch) do
+  if (upcaseCh([i]) in ["O","I","Y","E","A","U"]) then
+  v=:v+1
+  end if 
+  end for 
+  return v 
+  end  vol
+  function len(string ch; ):integer
+  var
+  integer k;
+  begin
+  k=:0
+  repeat 
+k=k+1
+  until(ch[i]=".")
+  return k
+  end len
+  function word(string ch;):integer
+  var
+  integer j,w;
+  begin
+  j=0
+  w=0
+while(j<=len(ch))do
+if (upcase(ch[j]) in ["A".."Z"]) then
+j=:j+1
+else 
+w=:w+1
+end if
+end while
+return w
+end word 
+
+
+algorithm main
+var 
+
+begin 
+repeat 
+write(" enter your sentence to check ")
+read(ch)
+until(ch[len(ch)="."])
+write(ch) 
+writeln
+write("length of the sentence is ",len(ch))
+writeln
+write("number of vowels is ",vol(ch))
+writeln
+write(" number of words is ",word(ch))
+end main 
+
+
+
+
